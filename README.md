@@ -7,13 +7,13 @@ Created by Connorhess, maintained by Alicia426
 <h3>Getting Started</h3>
 
 ```python
-import ducoapi
+from ducoapi import api_actions
 ```
 
 Initialize the connection to the server
 
 ```python
-api_connection = ducoapi.api_actions() #creates the api connection instance
+api_connection = api_actions() #creates the api connection instance
 ```
 
 The next step is to Login/Register <i>*Note: login and register do not require you to init but they close the connection after use*</i>
@@ -68,7 +68,7 @@ Use of this functions does not require being loged-in.
 returns the current Duco price as a float
 
 ```python
->>> ducoapi.get_duco_price() 
+>>> ducoapi.get_duco_price()
 0.01249
 ```
 
@@ -86,7 +86,7 @@ starts a timer that updates the price at a specified interval in seconds (defaul
 ```python
 import ducoapi
 
-api_connection = ducoapi.api_actions()
+api_connection = api_actions()
 
 api_connection.login(username='YourUsername', password='YourPassword')
 
