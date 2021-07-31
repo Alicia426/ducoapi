@@ -9,10 +9,9 @@ from requests import get
 from threading import Timer
 import json
 
-API_URL = "http://51.15.127.80/api.json"
+API_URL = "http://server.duinocoin.com/api.json"
 SERVER_URL = "https://raw.githubusercontent.com/revoxhere/duino-coin/gh-pages/serverip.txt"
 duco_price = 0.003
-socket.setdefaulttimeout(10)
 
 
 def decode_response(rec):
