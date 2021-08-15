@@ -437,15 +437,28 @@ class api_actions:
         user_balance = self.sock.recv(1024).decode()
         return user_balance
 
-    def transfer(self, recipient_username, amount):
+    def transfer(self, recipient_username, amount, memo="DucoAPI"):
         """
         A function for transfering balance between two accounts
         """
         if not self.password or not self.username:
             raise Exception("User not logged in")
-        self.sock.send(f"SEND,-,{recipient_username},{amount}".encode())
+        self.sock.send(f"SEND,-,{recipient_username},{amount},{memo}".encode())
         transfer_response = self.sock.recv(128).decode()
         return transfer_response
+
+    def transferRest(self, recipient_username, amount, memo="DucoAPI"):
+        """
+        A function for transfering balance between two accounts using the Rest API
+        """
+        if not self.password or not self.username:
+            raise Exception("User not logged in")
+        url = f"https://server.duinocoin.com/transaction/?username={self.username}&password={self.password}&recipient={recipient_username}&amount={amount}&memo={memo}"
+
+        result = get(url)
+        result = result.json()
+
+        return result.get('result')
 
     def getTransactions(self, amount):
         """
