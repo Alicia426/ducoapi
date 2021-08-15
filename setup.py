@@ -4,8 +4,8 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name="ducoapi",  
-    version="0.0.2",
+    name="ducoapi",
+    version="0.0.3",
     author="Alicia426",
     author_email="alicia426@protonmail.com",
     description="Duino-Coin Mining library for Python.",

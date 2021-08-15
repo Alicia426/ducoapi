@@ -1,6 +1,6 @@
-import ducoapi
+from ducoapi import api_actions
 
-api_connection = ducoapi.api_actions()
+api_connection = api_actions()
 
 api_connection.login(username='yourusername', password='yourpass')
 
